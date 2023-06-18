@@ -1,11 +1,19 @@
 import express from 'express';
+import cors from 'cors';
+import 'dotenv/config';
+import { pingRouter } from './routes/pingRouter.js';
+import { dogRouter } from './routes/dogRouter.js';
+import { errorMiddleware } from './middlewares/errorMiddleware.js';
 
 const app = express();
+const port = process.env.PORT || 5000;
 
-app.use('/', (req, res) => {
-  res.send('Hello World');
-});
+app.use(cors());
+app.use(express.json());
+app.use(pingRouter);
+app.use(dogRouter);
+app.use(errorMiddleware);
 
-app.listen(5000, () => {
-  console.log('server is running');
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}!`);
 });
