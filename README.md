@@ -18,7 +18,7 @@ npm install # install all dependencies
 RENAME `.env.example` to `.env` and fill with your values
 
 ```bash
-ts-node /src/utils/setup.ts # initializes the database with the data provided
+ts-node ./src/utils/setup.ts # initializes the database with the data provided
 npm run dev # start the server
 ```
 

@@ -22,12 +22,12 @@ export const Dog = sequelize.define<DogModel>('dog', {
   },
 
   tail_length: {
-    type: DataTypes.NUMBER,
+    type: DataTypes.FLOAT,
     allowNull: false,
   },
 
   weight: {
-    type: DataTypes.NUMBER,
+    type: DataTypes.FLOAT,
     allowNull: false,
   },
 });
